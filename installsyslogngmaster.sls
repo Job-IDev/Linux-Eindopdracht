@@ -1,3 +1,6 @@
+# Dit is de installatie file voor de syslog-ng master. Hier wordt apart nog beschreven waar de logs opgeslagen worden.
+# Net zoals de syslog-ng installatie wordt er een back-up gemaakt. Maar hier wordt ook een log file aangemaakt.
+# In deze file kan je de logs terugvinden wanneer er een error opgetreden is.
 install syslogng master:
   pkg.installed:
     - pkgs:

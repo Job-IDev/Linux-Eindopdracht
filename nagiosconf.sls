@@ -1,3 +1,8 @@
+# Dit is de configuratie file voor nagios. Hierin wordt de configuratie ingesteld.
+# Als eerste komt hier de plek van het bestand.
+# Daarna wordt de hoofdserver toegevoegd (de salt master)
+# Uiteindelijk wordt de service gerestart om zeker van de installatie te zijn.
+
 client address:
   file.line:
     - name: /etc/nagios/nrpe.cfg

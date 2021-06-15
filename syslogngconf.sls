@@ -1,3 +1,7 @@
+# Dit is de configuratie file van syslog-ng.
+# Als eerste wordt er een back-up gemaakt van het bestand.
+# Daarna wordt er een nieuwe config file aangemaakt met de laatste updates.
+# Uiteindelijk wordt de syslog-ng service opnieuw opgestart.
 backup conf file:
   file.rename:
     - name: /etc/syslog-ng/syslog-ng.conf.BAK

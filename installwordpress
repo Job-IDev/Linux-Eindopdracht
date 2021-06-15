@@ -1,3 +1,5 @@
+# Dit is de installatie voor wordpress. Voor wordpress heb je een aantal services nodig om het werkende te krijgen.
+# Hieronder valt apache2 om wordpress te draaien, en php voor de website.
 wordpress:
   pkg.installed: [] 
   require: 
