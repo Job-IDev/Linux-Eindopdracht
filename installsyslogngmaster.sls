@@ -3,12 +3,12 @@ install syslogng master:
     - pkgs:
       - syslog-ng
 
-backup conf file:
+backup conf file syslog:
   file.rename:
     - name: /etc/syslog-ng/syslog-ng.conf.BAK
     - source: /etc/syslog-ng/syslog-ng.conf
 
-syslog-ng conf:
+syslog-ng conf master:
   file.append:
     - name: /etc/syslog-ng/syslog-ng.conf
     - text: |
@@ -31,20 +31,15 @@ syslog-ng conf:
 create dir log:
   file.directory:
     - name: /var/log/syslog-ng
-    - user: JobS
-    - group: JobS
+    - user: root
+    - group: root
     - mode: 755
     - makedirs: True
 
 create file log:
   file.managed:
     - name: /var/log/syslog-ng/logs.txt
-    - user: JobS
-    - group: JobS
+    - user: root
+    - group: root
     - mode: 755
     - replace: False
-
-syslog-ng:
-  service.running:
-    - enable: True
-    - reload: True

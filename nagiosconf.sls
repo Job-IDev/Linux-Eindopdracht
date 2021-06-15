@@ -22,8 +22,7 @@ Toevoegen commands aan nrpe_local:
       - command[check_http]=/usr/lib/nagios/plugins/check_http -I {{ salt['grains.get']('fqdn_ip4')[0] }}
       - command[check_apt]=/usr/lib/nagios/plugins/check_apt
 
-sudo systemctl restart nagios-nrpe-server
-  cmd.run
-
-sudo systemctl enable nagios-nrpe-server
-  cmd.run
+nagios-nrpe-server:
+  service.running:
+    - enable: True
+    - reload: True
