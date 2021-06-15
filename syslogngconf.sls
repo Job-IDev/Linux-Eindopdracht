@@ -24,7 +24,7 @@ syslog-ng conf:
         source s_mysql {
              file("/var/log/mysql/error_log");
         };
-        destination loghost { syslog("salt" transport("tcp") port(514)); };
+        destination loghost { syslog("10.0.25.36" transport("tcp") port(514)); };
         log { source(s_local); destination(loghost); };
 
 syslog-ng:
